@@ -1,9 +1,9 @@
 function getSearchInputValue() {
-    let searchInputValue = '';
-    if (localStorage.getItem('searchInputValue')) {
-      searchInputValue = String(localStorage.getItem('searchInputValue'));
-    }
-    return searchInputValue;
+  let searchInputValue = "";
+  if (localStorage.getItem("searchInputValue")) {
+    searchInputValue = String(localStorage.getItem("searchInputValue"));
   }
-  
-  export default getSearchInputValue;
+  return searchInputValue;
+}
+
+export default getSearchInputValue;

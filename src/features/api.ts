@@ -25,7 +25,7 @@ export const getPeople = async (searchQuery: string = "") => {
     `https://swapi.dev/api/people/?search=${searchQuery}`,
     {
       method: "GET",
-    }
+    },
   );
   const people: People = await response.json();
   const { results } = people;

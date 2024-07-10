@@ -7,6 +7,7 @@ export default class App extends React.Component {
   state = {
     searchInputValue: getSearchInputValue(),
     searchResults: [],
+    isLoading: false,
   };
   componentDidMount() {
     this.setState({ searchInputValue: getSearchInputValue() });
@@ -20,10 +21,15 @@ export default class App extends React.Component {
   }
 
   handleClick = async () => {
-    const peopleArray = await getPeople(this.state.searchInputValue);
+    this.setState((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
+    const peopleArray = await getPeople(this.state.searchInputValue.trim());
     this.setState((prev) => ({
       ...prev,
       searchResults: peopleArray,
+      isLoading: false,
     }));
   };
 
@@ -42,22 +48,25 @@ export default class App extends React.Component {
           <button onClick={this.handleClick}>Search</button>
           <button className="error">Error</button>
         </div>
-
-        <div className="people">
-          {!!this.state.searchResults.length &&
-            this.state.searchResults.map((el: Person) => (
-              <div className="person" key={el.name}>
-                <h2 className="name">{el.name}</h2>
-                <p className="description">
-                  Was born in the year {el.birth_year}.{" "}
-                  {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has{" "}
-                  {el.eye_color} eyes,
-                  {el.hair_color} hair, weighs {el.mass} kg, and is
-                  {el.height} cm tall.
-                </p>
-              </div>
-            ))}
-        </div>
+        {this.state.isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className="people">
+            {!!this.state.searchResults.length &&
+              this.state.searchResults.map((el: Person) => (
+                <div className="person" key={el.name}>
+                  <h2 className="name">{el.name}</h2>
+                  <p className="description">
+                    Was born in the year {el.birth_year}.{" "}
+                    {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has{" "}
+                    {el.eye_color} eyes, {el.hair_color} hair, weighs {el.mass}{" "}
+                    kg, and is
+                    {el.height} cm tall.
+                  </p>
+                </div>
+              ))}
+          </div>
+        )}
       </>
     );
   }

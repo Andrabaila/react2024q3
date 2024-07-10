@@ -1,29 +1,29 @@
 import React from "react";
 import getSearchInputValue from "./features/getSearchInputValue";
 import setSearchInputValue from "./features/setSearchInputValue";
-//import { fakePeople, getPeople } from "./features/api";
-import { fakePeople, Person } from "./features/api";
+import { Person, getPeople } from "./features/api";
 
 export default class App extends React.Component {
   state = {
     searchInputValue: getSearchInputValue(),
-    searchResults: fakePeople,
+    searchResults: [],
   };
   componentDidMount() {
     this.setState({ searchInputValue: getSearchInputValue() });
     window.addEventListener("beforeunload", () =>
       setSearchInputValue(this.state.searchInputValue)
     );
+    this.handleClick();
   }
   componentWillUnmount() {
     localStorage.setItem("searchInputValue", this.state.searchInputValue);
   }
 
   handleClick = async () => {
-    //const peopleArray = await getPeople();
+    const peopleArray = await getPeople();
     this.setState((prev) => ({
       ...prev,
-      searchResults: fakePeople,
+      searchResults: peopleArray,
     }));
   };
 

@@ -8,6 +8,7 @@ export default class App extends React.Component {
     searchInputValue: getSearchInputValue(),
     searchResults: [],
     isLoading: false,
+    isError: false,
   };
   componentDidMount() {
     this.setState({ searchInputValue: getSearchInputValue() });
@@ -33,7 +34,18 @@ export default class App extends React.Component {
     }));
   };
 
+  handleError = () => {
+    this.setState((prev) => ({
+      ...prev,
+      isError: true,
+    }));
+  };
+
   render(): React.ReactNode {
+    if (this.state.isError) {
+      throw new Error("ERROR!!!");
+    }
+
     return (
       <>
         <div className="search-bar">
@@ -46,7 +58,9 @@ export default class App extends React.Component {
             }
           />
           <button onClick={this.handleClick}>Search</button>
-          <button className="error">Error</button>
+          <button className="error" onClick={this.handleError}>
+            Error
+          </button>
         </div>
         {this.state.isLoading ? (
           <p>Loading...</p>

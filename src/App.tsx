@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 
   handleClick = async () => {
-    const peopleArray = await getPeople();
+    const peopleArray = await getPeople(this.state.searchInputValue);
     this.setState((prev) => ({
       ...prev,
       searchResults: peopleArray,

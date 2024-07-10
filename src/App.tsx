@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import getSearchInputValue from "./features/getSearchInputValue";
+import setSearchInputValue from "./features/setSearchInputValue";
+//import { fakePeople, getPeople } from "./features/api";
+import { fakePeople, Person } from "./features/api";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default class App extends React.Component {
+  state = {
+    searchInputValue: getSearchInputValue(),
+    searchResults: fakePeople,
+  };
+  componentDidMount() {
+    this.setState({ searchInputValue: getSearchInputValue() });
+    window.addEventListener("beforeunload", () =>
+      setSearchInputValue(this.state.searchInputValue)
+    );
+  }
+  componentWillUnmount() {
+    localStorage.setItem("searchInputValue", this.state.searchInputValue);
+  }
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  handleClick = async () => {
+    //const peopleArray = await getPeople();
+    this.setState((prev) => ({
+      ...prev,
+      searchResults: fakePeople,
+    }));
+  };
+
+  render(): React.ReactNode {
+    return (
+      <>
+        <div className="search-bar">
+          <input
+            type="search"
+            placeholder="enter name"
+            value={this.state.searchInputValue}
+            onChange={(event) =>
+              this.setState({ searchInputValue: event.target.value })
+            }
+          />
+          <button onClick={this.handleClick}>Search</button>
+          <button className="error">Error</button>
+        </div>
+
+        <div className="people">
+          {!!this.state.searchResults.length &&
+            this.state.searchResults.map((el: Person) => (
+              <div className="person" key={el.name}>
+                <h2 className="name">{el.name}</h2>
+                <p className="description">
+                  Was born in the year {el.birth_year}.{" "}
+                  {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has{" "}
+                  {el.eye_color} eyes,
+                  {el.hair_color} hair, weighs {el.mass} kg, and is
+                  {el.height} cm tall.
+                </p>
+              </div>
+            ))}
+        </div>
+      </>
+    );
+  }
 }
-
-export default App

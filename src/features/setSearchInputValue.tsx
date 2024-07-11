@@ -1,8 +1,8 @@
 function setSearchInputValue(inputValue: string | null) {
-  if (typeof inputValue === "string") {
-    localStorage.setItem("searchInputValue", inputValue.trim());
+  if (typeof inputValue === 'string') {
+    localStorage.setItem('searchInputValue', inputValue.trim());
   } else {
-    localStorage.setItem("searchInputValue", "");
+    localStorage.setItem('searchInputValue', '');
   }
 }
 

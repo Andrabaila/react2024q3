@@ -1,7 +1,7 @@
-import React from "react";
-import getSearchInputValue from "./features/getSearchInputValue";
-import setSearchInputValue from "./features/setSearchInputValue";
-import { Person, getPeople } from "./features/api";
+import React from 'react';
+import getSearchInputValue from './features/getSearchInputValue';
+import setSearchInputValue from './features/setSearchInputValue';
+import { Person, getPeople } from './features/api';
 
 export default class App extends React.Component {
   state = {
@@ -12,13 +12,11 @@ export default class App extends React.Component {
   };
   componentDidMount() {
     this.setState({ searchInputValue: getSearchInputValue() });
-    window.addEventListener("beforeunload", () =>
-      setSearchInputValue(this.state.searchInputValue)
-    );
+    window.addEventListener('beforeunload', () => setSearchInputValue(this.state.searchInputValue));
     this.handleClick();
   }
   componentWillUnmount() {
-    localStorage.setItem("searchInputValue", this.state.searchInputValue);
+    localStorage.setItem('searchInputValue', this.state.searchInputValue);
   }
 
   handleClick = async () => {
@@ -43,7 +41,7 @@ export default class App extends React.Component {
 
   render(): React.ReactNode {
     if (this.state.isError) {
-      throw new Error("ERROR!!!");
+      throw new Error('ERROR!!!');
     }
 
     return (
@@ -53,9 +51,7 @@ export default class App extends React.Component {
             type="search"
             placeholder="enter name"
             value={this.state.searchInputValue}
-            onChange={(event) =>
-              this.setState({ searchInputValue: event.target.value })
-            }
+            onChange={(event) => this.setState({ searchInputValue: event.target.value })}
           />
           <button onClick={this.handleClick}>Search</button>
           <button className="error" onClick={this.handleError}>
@@ -71,10 +67,9 @@ export default class App extends React.Component {
                 <div className="person" key={el.name}>
                   <h2 className="name">{el.name}</h2>
                   <p className="description">
-                    Was born in the year {el.birth_year}.{" "}
-                    {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has{" "}
-                    {el.eye_color} eyes, {el.hair_color} hair, weighs {el.mass}{" "}
-                    kg, and is
+                    Was born in the year {el.birth_year}.{' '}
+                    {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has {el.eye_color}{' '}
+                    eyes, {el.hair_color} hair, weighs {el.mass} kg, and is
                     {el.height} cm tall.
                   </p>
                 </div>

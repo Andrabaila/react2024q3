@@ -20,13 +20,10 @@ type People = {
   results: Person[];
 };
 
-export const getPeople = async (searchQuery: string = "") => {
-  const response = await fetch(
-    `https://swapi.dev/api/people/?search=${searchQuery}`,
-    {
-      method: "GET",
-    },
-  );
+export const getPeople = async (searchQuery: string = '') => {
+  const response = await fetch(`https://swapi.dev/api/people/?search=${searchQuery}`, {
+    method: 'GET',
+  });
   const people: People = await response.json();
   const { results } = people;
   return results;

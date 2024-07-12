@@ -1,7 +1,7 @@
 import React from 'react';
-import getSearchInputValue from './features/getSearchInputValue';
-import setSearchInputValue from './features/setSearchInputValue';
-import { Person, getPeople } from './features/api';
+import getSearchInputValue from '../features/getSearchInputValue';
+import setSearchInputValue from '../features/setSearchInputValue';
+import { Person, getPeople } from '../features/api';
 
 export default class App extends React.Component {
   state = {

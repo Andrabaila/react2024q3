@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import ErrorBoundary from './ErrorBoundary.tsx';
+import ErrorBoundary from './features/ErrorBoundary.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { routes } from './shared/routes/index.tsx';
+import { routes } from './app/routes/index.tsx';
 
 const router = createBrowserRouter(routes);
 ReactDOM.createRoot(document.getElementById('root')!).render(

@@ -1,5 +1,5 @@
-import App from '../../app/App';
-import PageNotFound from '../../pages/Page404';
+import App from '../App';
+import PageNotFound from '../../pages/404/Page404';
 import { Navigate, RouteObject } from 'react-router-dom';
 
 export const routes: RouteObject[] = [

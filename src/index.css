@@ -60,43 +60,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.search-bar {
-  display: flex;
-  gap: 15px;
-  padding: 10px;
-}
-
-input {
-  padding: 10px;
-}
-
-.error {
-  color: red;
-}
-
-.people {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 50px;
-  gap: 20px;
-  justify-content: center;
-}
-
-.person {
-  width: 250px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: rgb(18, 18, 18);
-}
-
-.name {
-  text-align: center;
-}
-
-.description {
-  text-align: justify;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

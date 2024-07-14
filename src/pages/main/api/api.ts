@@ -13,18 +13,24 @@ export type Person = {
   url: string;
 };
 
-type People = {
+export type People = {
   count: number;
-  next: string;
-  previous: string;
+  next: string | null;
+  previous: string | null;
   results: Person[];
 };
 
-export const getPeople = async (searchQuery: string = '') => {
-  const response = await fetch(`https://swapi.dev/api/people/?search=${searchQuery}`, {
-    method: 'GET',
-  });
-  const people: People = await response.json();
-  const { results } = people;
-  return results;
+export const getPeople = async (searchQuery: string = '', page: number = 1) => {
+  try {
+    const response = await fetch(
+      `https://swapi.dev/api/people/?search=${searchQuery}&page=${page}`,
+      {
+        method: 'GET',
+      },
+    );
+    const people: People = await response.json();
+    return people;
+  } catch (e) {
+    console.error(e);
+  }
 };

@@ -1,0 +1,22 @@
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 20px;
+  justify-content: center;
+}
+
+.person {
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(18, 18, 18);
+}
+
+.name {
+  text-align: center;
+}
+
+.description {
+  text-align: justify;
+}

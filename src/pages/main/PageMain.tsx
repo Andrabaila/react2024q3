@@ -1,16 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import CardList from '../../widgets/cardList/CardList';
 import { SearchBar } from '../../widgets/searchBar/SearchBar';
-import { People, getPeople } from './api/api';
 import { useLocalStorage } from '../../app/hooks/useLocalStorage';
 import { Pagination } from '../../widgets/pagination/Pagination';
 import { useSearchParams } from 'react-router-dom';
+import { useGetPeopleQuery } from './api/swapiApi';
 
 type InitialState = {
   searchInputValue: string;
-  searchResults: People;
-  isLoading: boolean;
-  isError: boolean;
   currentPageNumber: number;
 };
 
@@ -18,28 +15,25 @@ export default function PageMain() {
   const { searchInputValue, setSearchInputValue } = useLocalStorage();
   const [state, setState] = useState<InitialState>({
     searchInputValue: searchInputValue,
-    searchResults: { count: 0, next: null, previous: null, results: [] },
-    isLoading: false,
-    isError: false,
     currentPageNumber: 1,
   });
   const [, setURLSearchParams] = useSearchParams();
 
-  const handleClick = useCallback(async () => {
+  const {
+    data: peopleData,
+    error,
+    isLoading,
+  } = useGetPeopleQuery({
+    searchQuery: state.searchInputValue.trim(),
+    page: state.currentPageNumber,
+  });
+
+  const handleClick = useCallback(() => {
     setSearchInputValue(state.searchInputValue);
     setState((prev) => ({
       ...prev,
       currentPageNumber: 1,
-      isLoading: true,
     }));
-    const peopleArray = await getPeople(state.searchInputValue.trim(), 1);
-    if (peopleArray) {
-      setState((prev) => ({
-        ...prev,
-        searchResults: peopleArray,
-        isLoading: false,
-      }));
-    }
   }, [setSearchInputValue, state.searchInputValue]);
 
   useEffect(() => {
@@ -53,10 +47,7 @@ export default function PageMain() {
   }, [setURLSearchParams, state.currentPageNumber]);
 
   const handleError = () => {
-    setState((prev) => ({
-      ...prev,
-      isError: true,
-    }));
+    throw new Error('ERROR!!!');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,52 +57,27 @@ export default function PageMain() {
     }));
   };
 
-  if (state.isError) {
-    throw new Error('ERROR!!!');
-  }
-
-  const getPreviousPage = async () => {
+  const getPreviousPage = () => {
     if (state.currentPageNumber > 1) {
       setState((prev) => ({
         ...prev,
         currentPageNumber: state.currentPageNumber - 1,
-        isLoading: true,
       }));
-      const peopleArray = await getPeople(
-        state.searchInputValue.trim(),
-        state.currentPageNumber - 1,
-      );
-      if (peopleArray) {
-        setState((prev) => ({
-          ...prev,
-          searchResults: peopleArray,
-          isLoading: false,
-        }));
-      }
     }
   };
-  const getNextPage = async () => {
-    const totalPages = Math.ceil(state.searchResults.count / 10);
-    if (state.currentPageNumber < totalPages) {
+
+  const getNextPage = () => {
+    if (peopleData && state.currentPageNumber < Math.ceil(peopleData.count / 10)) {
       setState((prev) => ({
         ...prev,
         currentPageNumber: state.currentPageNumber + 1,
-        isLoading: true,
       }));
-
-      const peopleArray = await getPeople(
-        state.searchInputValue.trim(),
-        state.currentPageNumber + 1,
-      );
-      if (peopleArray) {
-        setState((prev) => ({
-          ...prev,
-          searchResults: peopleArray,
-          isLoading: false,
-        }));
-      }
     }
   };
+
+  if (error) {
+    handleError();
+  }
 
   return (
     <>
@@ -121,11 +87,11 @@ export default function PageMain() {
         value={state.searchInputValue}
         onChange={handleChange}
       />
-      {state.isLoading ? (
+      {isLoading ? (
         <p>Loading...</p>
       ) : (
         <>
-          <CardList list={state.searchResults.results} />
+          <CardList list={peopleData?.results || []} />
           <Pagination
             currentPageNumber={state.currentPageNumber}
             getPreviousPage={getPreviousPage}

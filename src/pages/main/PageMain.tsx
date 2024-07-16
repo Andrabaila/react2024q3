@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import CardList from '../../widgets/cardList/CardList';
-import { SearchBar } from '../../widgets/searchBar/SearchBar';
-import { useLocalStorage } from '../../app/hooks/useLocalStorage';
-import { Pagination } from '../../widgets/pagination/Pagination';
 import { useSearchParams } from 'react-router-dom';
 import { useGetPeopleQuery } from './api/swapiApi';
+import { CardList, SearchBar, Pagination } from '../../widgets/';
+import { useLocalStorage } from '../../shared/hooks';
 
 type InitialState = {
   searchInputValue: string;

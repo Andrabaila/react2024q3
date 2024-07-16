@@ -4,7 +4,7 @@ type Props = {
   getNextPage: () => void;
 };
 
-export const Pagination = (props: Props) => {
+const Pagination = (props: Props) => {
   return (
     <div>
       <button onClick={props.getPreviousPage}>back</button>
@@ -13,3 +13,5 @@ export const Pagination = (props: Props) => {
     </div>
   );
 };
+
+export default Pagination;

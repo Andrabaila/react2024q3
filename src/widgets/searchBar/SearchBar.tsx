@@ -7,7 +7,7 @@ type Props = {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
-export const SearchBar = ({ handleClick, handleError, value, onChange }: Props) => {
+const SearchBar = ({ handleClick, handleError, value, onChange }: Props) => {
   return (
     <div className="search-bar">
       <input type="search" placeholder="enter name 🔍" value={value} onChange={onChange} />
@@ -18,3 +18,5 @@ export const SearchBar = ({ handleClick, handleError, value, onChange }: Props) 
     </div>
   );
 };
+
+export default SearchBar;

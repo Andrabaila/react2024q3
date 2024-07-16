@@ -1,12 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorBoundary from '../features/ErrorBoundary';
+import { ErrorBoundary } from '../features/';
 import { routes } from './routes';
 
 const router = createBrowserRouter(routes);
-export default function App() {
+
+function App() {
   return (
     <ErrorBoundary>
       <RouterProvider router={router} />
     </ErrorBoundary>
   );
 }
+
+export default App;

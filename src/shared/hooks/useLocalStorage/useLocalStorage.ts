@@ -24,3 +24,5 @@ export const useLocalStorage = () => {
 
   return { searchInputValue, setSearchInputValue };
 };
+
+export default useLocalStorage;

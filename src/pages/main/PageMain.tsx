@@ -48,12 +48,12 @@ export default function PageMain() {
     throw new Error('ERROR!!!');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  /*   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setState((prev) => ({
       ...prev,
       searchInputValue: e.target.value,
     }));
-  };
+  }; */
 
   const getPreviousPage = () => {
     if (state.currentPageNumber > 1) {
@@ -79,12 +79,7 @@ export default function PageMain() {
 
   return (
     <>
-      <SearchBar
-        handleClick={handleClick}
-        handleError={handleError}
-        value={state.searchInputValue}
-        onChange={handleChange}
-      />
+      <SearchBar />
       {isLoading ? (
         <p>Loading...</p>
       ) : (

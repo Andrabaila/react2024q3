@@ -1,20 +1,12 @@
-import React from 'react';
-import './index.css';
+import styles from './SearchBar.module.css';
+import { ErrorButton, SearchButton, SearchInput } from '../../shared/ui';
 
-type Props = {
-  handleClick: () => void;
-  handleError: () => void;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
-const SearchBar = ({ handleClick, handleError, value, onChange }: Props) => {
+const SearchBar = () => {
   return (
-    <div className="search-bar">
-      <input type="search" placeholder="enter name 🔍" value={value} onChange={onChange} />
-      <button onClick={handleClick}>Search</button>
-      <button className="error" onClick={handleError}>
-        Error
-      </button>
+    <div className={styles.search_bar}>
+      <SearchInput />
+      <SearchButton />
+      <ErrorButton />
     </div>
   );
 };

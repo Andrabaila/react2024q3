@@ -1,3 +1,4 @@
+import styles from './Pagination.module.css';
 type Props = {
   currentPageNumber: number;
   getPreviousPage: () => void;
@@ -6,10 +7,14 @@ type Props = {
 
 const Pagination = (props: Props) => {
   return (
-    <div>
-      <button onClick={props.getPreviousPage}>back</button>
+    <div className={styles.pagination}>
+      <button className={styles.button} onClick={props.getPreviousPage}>
+        back
+      </button>
       <span>{props.currentPageNumber}</span>
-      <button onClick={props.getNextPage}>forward</button>
+      <button className={styles.button} onClick={props.getNextPage}>
+        forward
+      </button>
     </div>
   );
 };

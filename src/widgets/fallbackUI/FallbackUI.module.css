@@ -1,0 +1,9 @@
+.error {
+  color: red;
+}
+
+.error_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

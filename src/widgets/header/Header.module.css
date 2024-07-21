@@ -1,0 +1,6 @@
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  padding: 10px;
+}

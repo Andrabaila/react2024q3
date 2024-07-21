@@ -1,8 +1,8 @@
 import React from 'react';
+import { FallbackUI } from '../../widgets';
 
 type ErrorBoundaryState = {
   hasError: boolean;
-  errorLogged: boolean;
 };
 
 type ErrorBoundaryProps = {
@@ -12,36 +12,17 @@ type ErrorBoundaryProps = {
 export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
-    this.state = { hasError: false, errorLogged: false };
+    this.state = { hasError: false };
   }
 
-  componentDidCatch(error: Error) {
-    const { errorLogged } = this.state;
-    if (!errorLogged) {
-      console.error(error);
-      this.setState({ hasError: true, errorLogged: true });
-    }
+  static getDerivedStateFromError() {
+    return { hasError: true };
   }
 
-  render() {
-    const { hasError } = this.state;
-    const { children } = this.props;
-    if (hasError) {
-      return (
-        <div className="error">
-          <h1>ERROR!!!</h1>
-          <button
-            type="button"
-            className="button-reload"
-            onClick={() => {
-              window.location.reload();
-            }}
-          >
-            Reload
-          </button>
-        </div>
-      );
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return <FallbackUI />;
     }
-    return children;
+    return this.props.children;
   }
 }

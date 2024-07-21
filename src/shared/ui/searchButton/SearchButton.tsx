@@ -1,12 +1,16 @@
-import { useGetPeopleQuery } from '../../../pages/main/api/swapiApi';
-import { useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { setQueryValue } from '../searchInput/searchSlice';
 import styles from './SearchButton.module.css';
 
 const SearchButton = () => {
-  const searchValue = useAppSelector((state) => state.search.searchValue);
-  const { refetch } = useGetPeopleQuery({ searchQuery: searchValue, page: 1 }, { skip: true });
+  const searchInputValue = useAppSelector((state) => state.search.searchInputValue);
+  const searchQuery = useAppSelector((state) => state.search.searchQueryValue);
+  const dispatch = useAppDispatch();
+
   const handleClick = () => {
-    refetch;
+    if (searchQuery != searchInputValue) {
+      dispatch(setQueryValue(searchInputValue));
+    }
   };
 
   return (

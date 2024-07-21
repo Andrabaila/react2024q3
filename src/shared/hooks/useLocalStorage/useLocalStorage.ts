@@ -1,28 +1,31 @@
 import { useState, useEffect } from 'react';
 
-export const useLocalStorage = () => {
-  const key = 'searchInputValue';
-  const [searchInputValue, setSearchInputValue] = useState('');
+export const useLocalStorage = (key: string) => {
+  const [storedValue, setStoredValue] = useState(() => {
+    return localStorage.getItem(key) || '';
+  });
 
-  // Load the query from local storage when the component mounts
   useEffect(() => {
-    const savedQuery = localStorage.getItem(key);
-    if (savedQuery) {
-      setSearchInputValue(savedQuery);
+    const savedValue = localStorage.getItem(key);
+    if (savedValue) {
+      setStoredValue(savedValue);
     } else {
-      localStorage.setItem(key, searchInputValue);
+      localStorage.setItem(key, storedValue);
     }
-  }, [searchInputValue]);
+  }, [key, storedValue]);
 
-  // Save the query to local storage when the component unmounts
   useEffect(() => {
-    window.addEventListener('beforeunload', () => localStorage.setItem(key, searchInputValue));
-    return () => {
-      localStorage.setItem(key, searchInputValue);
+    const handleBeforeUnload = () => {
+      localStorage.setItem(key, storedValue);
     };
-  }, [searchInputValue]);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      localStorage.setItem(key, storedValue);
+    };
+  }, [key, storedValue]);
 
-  return { searchInputValue, setSearchInputValue };
+  return { storedValue, setStoredValue };
 };
 
 export default useLocalStorage;

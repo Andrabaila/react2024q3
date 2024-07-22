@@ -30,15 +30,13 @@ export default function CardList() {
   }, [dispatch, peopleData]);
 
   return (
-    <div className={styles.people}>
+    <main className={styles.main}>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
         <>
           <div className={styles.people}>
-            {' '}
-            {peopleData &&
-              !!peopleData.results.length &&
+            {peopleData && peopleData.results.length ? (
               peopleData.results.map((el: Person) => (
                 <div className={styles.person} key={el.name}>
                   <h2 className={styles.name}>{el.name}</h2>
@@ -48,12 +46,18 @@ export default function CardList() {
                     eyes, {el.hair_color} hair, weighs {el.mass} kg, and is {el.height} cm tall.
                   </p>
                 </div>
-              ))}
+              ))
+            ) : (
+              <h3>Sorry!</h3>
+            )}
           </div>
-
-          <Pagination />
+          {peopleData && peopleData.results.length ? (
+            <Pagination />
+          ) : (
+            <div>There are no results matching the specified search criteria</div>
+          )}
         </>
       )}
-    </div>
+    </main>
   );
 }

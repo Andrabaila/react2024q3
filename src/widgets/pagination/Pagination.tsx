@@ -1,18 +1,33 @@
+import { useAppDispatch, useAppSelector } from '../../shared/hooks';
 import styles from './Pagination.module.css';
-type Props = {
-  currentPageNumber: number;
-  getPreviousPage: () => void;
-  getNextPage: () => void;
-};
+import { setCurrentPageNumber } from './paginationSlice';
 
-const Pagination = (props: Props) => {
+const Pagination = () => {
+  const dispatch = useAppDispatch();
+  const currentPageNumber = useAppSelector((state) => state.pagination.currentPageNumber);
+  const totalPages = useAppSelector((state) => state.pagination.totalPages);
+
+  const getPreviousPage = () => {
+    if (currentPageNumber > 1) {
+      dispatch(setCurrentPageNumber(currentPageNumber - 1));
+    }
+  };
+
+  const getNextPage = () => {
+    if (currentPageNumber < totalPages) {
+      dispatch(setCurrentPageNumber(currentPageNumber + 1));
+    }
+  };
+
   return (
     <div className={styles.pagination}>
-      <button className={styles.button} onClick={props.getPreviousPage}>
+      <button className={styles.button} onClick={getPreviousPage}>
         back
       </button>
-      <span>{props.currentPageNumber}</span>
-      <button className={styles.button} onClick={props.getNextPage}>
+      <span>
+        {currentPageNumber} of {totalPages}
+      </span>
+      <button className={styles.button} onClick={getNextPage}>
         forward
       </button>
     </div>

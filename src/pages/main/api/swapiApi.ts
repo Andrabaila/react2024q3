@@ -6,7 +6,7 @@ export const swapiApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://swapi.dev/api/' }),
   endpoints: (builder) => ({
     getPeople: builder.query<People, { searchQuery: string; page: number }>({
-      query: ({ searchQuery = '', page = 1 }) => `people/?search=${searchQuery}&page=${page}`,
+      query: ({ searchQuery, page }) => `people/?search=${searchQuery}&page=${page}`,
     }),
   }),
 });

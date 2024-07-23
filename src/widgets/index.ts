@@ -1,8 +1,7 @@
-import CardList from './cardList';
-import ErrorComponent from './errorComponent';
-import FallbackUI from './fallbackUI';
-import Header from './header';
-import Pagination from './pagination';
-import SearchBar from './searchBar';
-
-export { CardList, Pagination, SearchBar, ErrorComponent, FallbackUI, Header };
+export { default as CardDetails } from './cardDetails';
+export { default as CardList } from './cardList';
+export { default as ErrorComponent } from './errorComponent';
+export { default as FallbackUI } from './fallbackUI';
+export { default as Header } from './header';
+export { default as Pagination } from './pagination';
+export { default as SearchBar } from './searchBar';

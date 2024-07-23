@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { People } from './types';
+import { People, Person } from './types';
 
 export const swapiApi = createApi({
   reducerPath: 'swapiApi',
@@ -8,7 +8,10 @@ export const swapiApi = createApi({
     getPeople: builder.query<People, { searchQuery: string; page: number }>({
       query: ({ searchQuery, page }) => `people/?search=${searchQuery}&page=${page}`,
     }),
+    getPerson: builder.query<Person, { url: string }>({
+      query: ({ url }) => url,
+    }),
   }),
 });
 
-export const { useGetPeopleQuery } = swapiApi;
+export const { useGetPeopleQuery, useGetPersonQuery } = swapiApi;

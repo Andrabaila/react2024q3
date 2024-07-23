@@ -1,0 +1,9 @@
+.aside {
+  align-items: center;
+  padding: 20px;
+}
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

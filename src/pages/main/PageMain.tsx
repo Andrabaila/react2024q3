@@ -1,10 +1,14 @@
-import { CardList, Header } from '../../widgets/';
+import { CardDetails, CardList, Header } from '../../widgets/';
+import styles from './PageMain.module.css';
 
 export default function PageMain() {
   return (
     <>
       <Header />
-      <CardList />
+      <main className={styles.main}>
+        <CardList />
+        <CardDetails />
+      </main>
     </>
   );
 }

@@ -17,14 +17,13 @@
 .person {
   width: 250px;
   padding: 10px;
+  border: 1px solid;
   border-radius: 10px;
-  background-color: rgb(18, 18, 18);
   cursor: pointer;
 }
 
 .name {
   text-align: center;
-  color: white;
 }
 
 .description {

@@ -1,4 +1,9 @@
 :root {
+  --background-light: #ffffff;
+  --background-dark: #333333;
+  --color-light: #000000;
+  --color-dark: #ffffff;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -7,10 +12,19 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.light {
+  background-color: var(--background-light);
+  color: var(--color-light);
+}
+
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--color-dark);
 }
 
 #root {

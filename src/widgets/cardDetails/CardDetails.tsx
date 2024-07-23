@@ -39,7 +39,7 @@ const CardDetails = () => {
               <p>url: {person.url}</p>
             </p>
 
-            <button type="button" onClick={handleClick}>
+            <button type="button" className={styles.button} onClick={handleClick}>
               Close
             </button>
           </div>

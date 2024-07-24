@@ -16,7 +16,7 @@ const SearchButton = () => {
   };
 
   return (
-    <button className={styles.button} onClick={handleClick}>
+    <button type="button" className={styles.button} onClick={handleClick}>
       Search
     </button>
   );

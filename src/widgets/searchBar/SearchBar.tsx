@@ -3,10 +3,10 @@ import { SearchButton, SearchInput } from '../../shared/ui';
 
 const SearchBar = () => {
   return (
-    <div className={styles.search_bar}>
+    <form onSubmit={(event) => event.preventDefault()} className={styles.search_bar}>
       <SearchInput />
       <SearchButton />
-    </div>
+    </form>
   );
 };
 

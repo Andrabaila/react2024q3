@@ -1,5 +1,4 @@
-import { ErrorButton } from '../../shared/ui';
-import ThemeButton from '../../shared/ui/themeButton/ThemeButton';
+import { ErrorButton, ThemeButton } from '../../shared/ui';
 import SearchBar from '../searchBar';
 import styles from './Header.module.css';
 

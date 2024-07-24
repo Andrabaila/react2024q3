@@ -1,3 +1,1 @@
-import ErrorComponent from './ErrorComponent';
-
-export default ErrorComponent;
+export { default } from './ErrorComponent';

@@ -1,3 +1,1 @@
-import FallbackUI from './FallbackUI';
-
-export default FallbackUI;
+export { default } from './FallbackUI';

@@ -1,5 +1,3 @@
-import SearchButton from './searchButton';
-import ErrorButton from './errorButton';
-import SearchInput from './searchInput';
-
-export { SearchButton, ErrorButton, SearchInput };
+export { default as SearchButton } from './searchButton';
+export { default as ErrorButton } from './errorButton';
+export { default as SearchInput } from './searchInput';

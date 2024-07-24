@@ -1,4 +1,2 @@
-import ErrorBoundary from './errorBoundary';
-import LazyComponent from './lazyComponent';
-
-export { LazyComponent, ErrorBoundary };
+export { default as ErrorBoundary } from './errorBoundary';
+export { default as LazyComponent } from './lazyComponent';

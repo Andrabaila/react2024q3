@@ -1,5 +1,3 @@
-import Page404 from './404';
-import PageError from './error';
-import PageMain from './main';
-
-export { Page404, PageError, PageMain };
+export { default as Page404 } from './404';
+export { default as PageError } from './error';
+export { default as PageMain } from './main';

@@ -1,3 +1,1 @@
-import ErrorButton from './ErrorButton';
-
-export default ErrorButton;
+export { default } from './ErrorButton';

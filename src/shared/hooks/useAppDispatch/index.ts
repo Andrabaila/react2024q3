@@ -1,3 +1,1 @@
-import useAppDispatch from './useAppDispatch';
-
-export default useAppDispatch;
+export { default } from './useAppDispatch';

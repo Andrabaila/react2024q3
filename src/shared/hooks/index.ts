@@ -1,5 +1,4 @@
-import useLocalStorage from './useLocalStorage';
-import useAppDispatch from './useAppDispatch';
-import useAppSelector from './useAppSelector';
-
-export { useLocalStorage, useAppDispatch, useAppSelector };
+export { default as useLocalStorage } from './useLocalStorage';
+export { default as useAppDispatch } from './useAppDispatch';
+export { default as useAppSelector } from './useAppSelector';
+export { default as useTheme } from './useTheme';

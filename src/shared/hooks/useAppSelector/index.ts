@@ -1,3 +1,1 @@
-import useAppSelector from './useAppSelector';
-
-export default useAppSelector;
+export { default } from './useAppSelector';

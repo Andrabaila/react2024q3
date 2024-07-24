@@ -1,4 +1,4 @@
-import { useTheme } from '../../app/ThemeContext';
+import { useTheme } from '../../shared/hooks';
 import { ErrorButton } from '../../shared/ui';
 import SearchBar from '../searchBar';
 import styles from './Header.module.css';

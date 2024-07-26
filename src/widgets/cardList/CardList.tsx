@@ -7,12 +7,11 @@ import styles from './CardList.module.css';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setTotalPages } from '../pagination/paginationSlice';
-import { setIsVisible, setPersonURL } from '../cardDetails/cardDetailsSlice';
+import Card from '../card';
 
 export default function CardList() {
   const searchQuery = useAppSelector((state) => state.search.searchQueryValue);
   const currentPageNumber = useAppSelector((state) => state.pagination.currentPageNumber);
-  const isDetailsVisible = useAppSelector((state) => state.details.isVisible);
   const dispatch = useDispatch();
 
   const [, setURLSearchParams] = useSearchParams();
@@ -31,13 +30,6 @@ export default function CardList() {
     }
   }, [dispatch, peopleData]);
 
-  const handleClick = (url: string) => {
-    if (!isDetailsVisible) {
-      dispatch(setIsVisible(true));
-      dispatch(setPersonURL(url));
-    }
-  };
-
   return (
     <section className={styles.section}>
       {isLoading ? (
@@ -46,16 +38,7 @@ export default function CardList() {
         <>
           <div className={styles.people}>
             {peopleData && peopleData.results.length ? (
-              peopleData.results.map((el: Person) => (
-                <div className={styles.person} key={el.name} onClick={() => handleClick(el.url)}>
-                  <h2 className={styles.name}>{el.name}</h2>
-                  <p className={styles.description}>
-                    Was born in the year {el.birth_year}.{' '}
-                    {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has {el.eye_color}{' '}
-                    eyes, {el.hair_color} hair, weighs {el.mass} kg, and is {el.height} cm tall.
-                  </p>
-                </div>
-              ))
+              peopleData.results.map((el: Person) => <Card el={el} key={el.name} />)
             ) : (
               <h3>Sorry!</h3>
             )}

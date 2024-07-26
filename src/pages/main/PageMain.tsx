@@ -1,4 +1,4 @@
-import { CardDetails, CardList, Header } from '../../widgets/';
+import { CardDetails, CardList, FlyoutElement, Header } from '../../widgets/';
 import styles from './PageMain.module.css';
 
 export default function PageMain() {
@@ -9,6 +9,7 @@ export default function PageMain() {
         <CardList />
         <CardDetails />
       </main>
+      <FlyoutElement />
     </>
   );
 }

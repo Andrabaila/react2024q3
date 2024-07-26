@@ -13,19 +13,3 @@
   gap: 20px;
   justify-content: center;
 }
-
-.person {
-  width: 250px;
-  padding: 10px;
-  border: 1px solid;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.name {
-  text-align: center;
-}
-
-.description {
-  text-align: justify;
-}

@@ -32,7 +32,7 @@ const CardDetails = () => {
               <p>gender: {person.gender}</p>
               <p>skin color: {person.skin_color}</p>
               <p>hair color: {person.hair_color}</p>
-              <p>eye_color: {person.eye_color}</p>
+              <p>eye color: {person.eye_color}</p>
               <p>height: {person.height}</p>
               <p>mass: {person.mass}</p>
               <p>homeworld: {person.homeworld}</p>

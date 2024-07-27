@@ -16,11 +16,11 @@ const selectedSlice = createSlice({
     setQuantity(state, action: PayloadAction<number>) {
       state.quantity = action.payload;
     },
-    setSelectedArr(state, action: PayloadAction<number>) {
-      state.quantity = action.payload;
+    setSelectedArr(state, action: PayloadAction<Person[]>) {
+      state.selectedArr = action.payload;
     },
   },
 });
 
-export const { setQuantity } = selectedSlice.actions;
+export const { setQuantity, setSelectedArr } = selectedSlice.actions;
 export default selectedSlice.reducer;

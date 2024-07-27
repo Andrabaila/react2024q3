@@ -3,6 +3,7 @@ import { setIsVisible, setPersonURL } from '../cardDetails/cardDetailsSlice';
 import { useAppSelector } from '../../shared/hooks';
 import { useDispatch } from 'react-redux';
 import { Person } from '../../pages/main/api/types';
+import { setSelectedArr } from '../flyoutElement/selectedSlice';
 
 type Props = {
   el: Person;
@@ -10,10 +11,17 @@ type Props = {
 
 const Card = ({ el }: Props) => {
   const isDetailsVisible = useAppSelector((state) => state.details.isVisible);
-  const dispatch = useDispatch();
+  const selectedPeople = useAppSelector((state) => state.selected.selectedArr);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.stopPropagation();
+  const dispatch = useDispatch();
+  const isSelectedPerson = selectedPeople.find((person) => person.name === el.name);
+
+  const handleChange = () => {
+    if (isSelectedPerson) {
+      dispatch(setSelectedArr(selectedPeople.filter((person) => person.name != el.name)));
+    } else {
+      dispatch(setSelectedArr([...selectedPeople, el]));
+    }
   };
 
   const handleClick = (url: string) => {
@@ -31,7 +39,7 @@ const Card = ({ el }: Props) => {
         {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has {el.eye_color} eyes...
       </p>
       <label className={styles.label} aria-label="select person">
-        <input type="checkbox" onChange={handleChange} />
+        <input type="checkbox" onChange={handleChange} checked={!!isSelectedPerson} />
       </label>
     </div>
   );

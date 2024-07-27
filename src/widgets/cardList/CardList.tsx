@@ -33,7 +33,7 @@ export default function CardList() {
   return (
     <section className={styles.section}>
       {isLoading ? (
-        <p>Loading...</p>
+        <span>Loading...</span>
       ) : (
         <>
           <div className={styles.people}>

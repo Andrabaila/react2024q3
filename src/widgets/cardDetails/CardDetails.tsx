@@ -27,7 +27,7 @@ const CardDetails = () => {
         ) : person ? (
           <div className={styles.person} key={person.name} onClick={handleClick}>
             <h2 className={styles.name}>{person.name}</h2>
-            <p className={styles.description}>
+            <div className={styles.description}>
               <p>birth year: {person.birth_year}. </p>
               <p>gender: {person.gender}</p>
               <p>skin color: {person.skin_color}</p>
@@ -37,7 +37,7 @@ const CardDetails = () => {
               <p>mass: {person.mass}</p>
               <p>homeworld: {person.homeworld}</p>
               <p>url: {person.url}</p>
-            </p>
+            </div>
 
             <button type="button" className={styles.button} onClick={handleClick}>
               Close

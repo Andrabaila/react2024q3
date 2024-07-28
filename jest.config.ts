@@ -6,6 +6,9 @@ const config: Config = {
   coverageDirectory: 'coverage',
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy',
+  },
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   transform: {
@@ -15,6 +18,7 @@ const config: Config = {
         tsconfig: 'tsconfig.app.json',
       },
     ],
+    '^.+\\.css$': 'jest-css-modules-transform',
   },
   setupFilesAfterEnv: ['./src/setupTests.ts'],
 };

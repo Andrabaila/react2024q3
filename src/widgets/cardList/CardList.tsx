@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
-import { Person } from '../../pages/main/api/types';
-import { useGetPeopleQuery } from '../../pages/main/api/swapiApi';
+import { Person } from '../../shared/api/types';
+import { useGetPeopleQuery } from '../../shared/api/swapiApi';
 import { useAppSelector } from '../../shared/hooks';
 import Pagination from '../pagination';
 import styles from './CardList.module.css';
-import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setTotalPages } from '../pagination/paginationSlice';
 import Card from '../card';
@@ -14,10 +13,10 @@ export default function CardList() {
   const currentPageNumber = useAppSelector((state) => state.pagination.currentPageNumber);
   const dispatch = useDispatch();
 
-  const [, setURLSearchParams] = useSearchParams();
+  /*   const [, setURLSearchParams] = useSearchParams();
   useEffect(() => {
     setURLSearchParams(`search=${searchQuery}&page=${currentPageNumber}`);
-  }, [setURLSearchParams, searchQuery, currentPageNumber]);
+  }, [setURLSearchParams, searchQuery, currentPageNumber]); */
 
   const { data: peopleData, isLoading } = useGetPeopleQuery({
     searchQuery: searchQuery.trim(),

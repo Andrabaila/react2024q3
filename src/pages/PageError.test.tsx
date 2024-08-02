@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import PageError from './PageError';
+import PageError from './error';
 
 describe('PageError', () => {
   it('throws an intentional error', () => {

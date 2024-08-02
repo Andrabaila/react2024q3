@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Page404 from './Page404';
+import Page404 from './404';
 
 describe('Page404', () => {
   test('renders 404 page with messages', () => {

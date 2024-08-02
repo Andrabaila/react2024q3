@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { People } from '../../../pages/main/api/types';
+import { People } from '../../../shared/api/types';
 
 export interface SearchState {
   searchInputValue: string;
@@ -9,8 +9,8 @@ export interface SearchState {
 }
 
 const initialState: SearchState = {
-  searchInputValue: localStorage.getItem('searchInputValue') || '',
-  searchQueryValue: localStorage.getItem('searchQueryValue') || '',
+  searchInputValue: '',
+  searchQueryValue: '',
   searchResults: {
     count: 0,
     next: null,
@@ -26,14 +26,19 @@ const searchSlice = createSlice({
   reducers: {
     setSearchValue(state, action: PayloadAction<string>) {
       state.searchInputValue = action.payload;
-      localStorage.setItem('searchInputValue', action.payload);
     },
     setQueryValue(state, action: PayloadAction<string>) {
       state.searchQueryValue = action.payload;
-      localStorage.setItem('searchQueryValue', action.payload);
+    },
+    initializeStateFromLocalStorage(state) {
+      if (typeof window !== 'undefined') {
+        state.searchInputValue = localStorage.getItem('searchInputValue') || '';
+        state.searchQueryValue = localStorage.getItem('searchQueryValue') || '';
+      }
     },
   },
 });
 
-export const { setSearchValue, setQueryValue } = searchSlice.actions;
+export const { setSearchValue, setQueryValue, initializeStateFromLocalStorage } =
+  searchSlice.actions;
 export default searchSlice.reducer;

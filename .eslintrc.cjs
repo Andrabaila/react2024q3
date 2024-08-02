@@ -5,12 +5,19 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'next',
+    'next/core-web-vitals',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'react-compiler'],
+  plugins: ['react-refresh', 'react-compiler', '@typescript-eslint'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react-compiler/react-compiler': 'error',
+  },
+  settings: {
+    next: {
+      rootDir: 'src',
+    },
   },
 };

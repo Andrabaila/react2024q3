@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useGetPeopleQuery } from '../../pages/main/api/swapiApi';
-import { useSearchParams } from 'react-router-dom';
+import { useGetPeopleQuery } from '../../shared/api/swapiApi';
 import CardList from './CardList';
-import { Person } from '../../pages/main/api/types';
+import { Person } from '../../shared/api/types';
+import { useSearchParams } from 'next/navigation';
 
 // Mock hooks
 jest.mock('react-redux', () => ({
@@ -11,16 +11,20 @@ jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
 }));
 
-jest.mock('../../pages/main/api/swapiApi', () => ({
+jest.mock('../../shared/api/swapiApi', () => ({
   useGetPeopleQuery: jest.fn(),
 }));
 
-jest.mock('react-router-dom', () => ({
+jest.mock('next/navigation', () => ({
   useSearchParams: jest.fn(),
 }));
 
-// Mock Card component
-jest.mock('../card', () => ({ el }: { el: Person }) => <div>{el.name}</div>);
+// Mock Card component with displayName
+jest.mock('../card', () => {
+  const Card = ({ el }: { el: Person }) => <div>{el.name}</div>;
+  Card.displayName = 'Card';
+  return Card;
+});
 
 // Test data
 const mockPeopleData = {

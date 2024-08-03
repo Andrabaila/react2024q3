@@ -3,7 +3,6 @@ import { Person } from '../../shared/api/types';
 import { useGetPeopleQuery } from '../../shared/api/swapiApi';
 import { useAppSelector } from '../../shared/hooks';
 import Pagination from '../pagination';
-import styles from './CardList.module.css';
 import { useDispatch } from 'react-redux';
 import { setTotalPages } from '../pagination/paginationSlice';
 import Card from '../card';
@@ -30,12 +29,12 @@ export default function CardList() {
   }, [dispatch, peopleData]);
 
   return (
-    <section className={styles.section}>
+    <section className="flex flex-col p-5 gap-2.5 items-center">
       {isLoading ? (
         <span>Loading...</span>
       ) : (
         <>
-          <div className={styles.people}>
+          <div className="flex flex-wrap p-5 gap-5 justify-center">
             {peopleData && peopleData.results.length ? (
               peopleData.results.map((el: Person) => <Card el={el} key={el.name} />)
             ) : (

@@ -1,7 +1,6 @@
 import { setCurrentPageNumber } from '../../../widgets/pagination/paginationSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { setQueryValue } from '../searchInput/searchSlice';
-import styles from './SearchButton.module.css';
 
 const SearchButton = () => {
   const searchInputValue = useAppSelector((state) => state.search.searchInputValue);
@@ -16,7 +15,7 @@ const SearchButton = () => {
   };
 
   return (
-    <button type="button" className={styles.button} onClick={handleClick}>
+    <button type="button" className="border border-gray-300" onClick={handleClick}>
       Search
     </button>
   );

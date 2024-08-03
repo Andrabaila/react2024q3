@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { swapiApi } from './pages/api/swapiApi';
+import { swapiApi } from './shared/api/swapiApi';
 import searchReducer from './shared/ui/searchInput/searchSlice';
 import paginationReducer from './widgets/pagination/paginationSlice';
 import detailsReducer from './widgets/cardDetails/cardDetailsSlice';

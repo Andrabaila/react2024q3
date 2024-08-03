@@ -1,14 +1,14 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
-import { useGetPersonQuery } from '../../pages/main/api/swapiApi';
+import { useGetPersonQuery } from '../../shared/api/swapiApi';
 import CardDetails from './CardDetails';
 import { setIsVisible } from './cardDetailsSlice';
 import { RootState } from '../../store';
 
 const mockStore = configureStore<RootState>([]);
 
-jest.mock('../../pages/main/api/swapiApi', () => ({
+jest.mock('../../shared/api/swapiApi', () => ({
   useGetPersonQuery: jest.fn(),
 }));
 

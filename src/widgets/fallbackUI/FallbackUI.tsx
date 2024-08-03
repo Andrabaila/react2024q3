@@ -1,13 +1,11 @@
-import styles from './FallbackUI.module.css';
-
 const handleClick = () => {
   window.location.href = '/';
 };
 
 const FallbackUI = () => {
   return (
-    <main className={styles.error_main}>
-      <h1 className={styles.error}>ERROR!!!</h1>
+    <main className="text-red-500">
+      <h1 className="flex flex-col items-center">ERROR!!!</h1>
       <div>
         <p>An error occurred, this is error page.</p>
         <p>Адбылася памылка, гэта старонка памылкі.</p>

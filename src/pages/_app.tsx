@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <ErrorBoundary>
         <ThemeProvider>
-          <Component {...pageProps} />;
+          <Component {...pageProps} />
         </ThemeProvider>
       </ErrorBoundary>
     </Provider>

@@ -1,12 +1,10 @@
-import styles from './ErrorButton.module.css';
-
 const ErrorButton = () => {
   const handleError = () => {
     window.location.href = '/error';
   };
 
   return (
-    <button className={styles.button} onClick={handleError}>
+    <button className="text-red-500 border border-current" onClick={handleError}>
       Error
     </button>
   );

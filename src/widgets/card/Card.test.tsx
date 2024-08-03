@@ -4,7 +4,7 @@ import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
 import Card from './Card';
 import { setIsVisible, setPersonURL } from '../cardDetails/cardDetailsSlice';
 import { setSelectedArr } from '../flyoutElement/selectedSlice';
-import { Person } from '../../pages/main/api/types';
+import { Person } from '../../shared/api/types';
 
 const mockStore = configureStore<RootState>([]);
 const person: Person = {

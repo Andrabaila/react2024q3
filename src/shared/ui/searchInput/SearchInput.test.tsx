@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
 import SearchInput from './SearchInput';
-import { People } from '../../../pages/main/api/types';
+import { People } from '../../../shared/api/types';
 
 // Mock the useAppDispatch and useAppSelector hooks
 jest.mock('../../hooks/', () => ({

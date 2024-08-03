@@ -1,10 +1,9 @@
 import { ErrorButton, ThemeButton } from '../../shared/ui';
 import SearchBar from '../searchBar';
-import styles from './Header.module.css';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className="flex flex-nowrap gap-4 p-2.5">
       <SearchBar />
       <ErrorButton />
       <ThemeButton />

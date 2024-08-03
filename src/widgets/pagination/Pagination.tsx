@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from '../../shared/hooks';
-import styles from './Pagination.module.css';
 import { setCurrentPageNumber } from './paginationSlice';
 
 const Pagination = () => {
@@ -20,14 +19,14 @@ const Pagination = () => {
   };
 
   return (
-    <div className={styles.pagination}>
-      <button className={styles.button} onClick={getPreviousPage}>
+    <div className="flex gap-5 p-5 items-center">
+      <button className="min-w-48 border" onClick={getPreviousPage}>
         back
       </button>
       <span>
         {currentPageNumber} of {totalPages}
       </span>
-      <button className={styles.button} onClick={getNextPage}>
+      <button className="min-w-48 border" onClick={getNextPage}>
         forward
       </button>
     </div>

@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/';
 import { setSearchValue } from './searchSlice';
-import styles from './SearchInput.module.css';
 
 const SearchInput = () => {
   const dispatch = useAppDispatch();
@@ -13,7 +12,7 @@ const SearchInput = () => {
   return (
     <input
       type="search"
-      className={styles.input}
+      className="p-2"
       placeholder="enter name"
       value={searchInputValue}
       onChange={handleChange}

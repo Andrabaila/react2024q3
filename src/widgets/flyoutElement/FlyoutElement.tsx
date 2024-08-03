@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../shared/hooks';
-import styles from './flyoutElement.module.css';
 import { setSelectedArr } from './selectedSlice';
 import { CSVLink } from 'react-csv';
 
@@ -13,7 +12,7 @@ const FlyoutElement = () => {
   };
 
   return (
-    <section className={styles.section}>
+    <section className="flex gap-5 p-5 items-center">
       <div>Number of selected items: {selectedPeople.length}</div>
       <button type="button" onClick={handleUnselect}>
         Unselect all

@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../shared/hooks';
-import styles from './CardDetails.module.css';
 import { setIsVisible } from './cardDetailsSlice';
 import { useGetPersonQuery } from '../../shared/api/swapiApi';
 
@@ -21,13 +20,13 @@ const CardDetails = () => {
 
   if (isDetailsVisible) {
     return (
-      <aside className={styles.aside}>
+      <aside className="flex items-center p-5">
         {isLoading ? (
           <p>Loading...</p>
         ) : person ? (
-          <div className={styles.person} key={person.name} onClick={handleClick}>
-            <h2 className={styles.name}>{person.name}</h2>
-            <div className={styles.description}>
+          <div className="flex flex-col items-center" key={person.name} onClick={handleClick}>
+            <h2>{person.name}</h2>
+            <div>
               <p>birth year: {person.birth_year}. </p>
               <p>gender: {person.gender}</p>
               <p>skin color: {person.skin_color}</p>
@@ -39,7 +38,7 @@ const CardDetails = () => {
               <p>url: {person.url}</p>
             </div>
 
-            <button type="button" className={styles.button} onClick={handleClick}>
+            <button type="button" className="border border-solid" onClick={handleClick}>
               Close
             </button>
           </div>

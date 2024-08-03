@@ -1,8 +1,7 @@
-import styles from './Card.module.css';
 import { setIsVisible, setPersonURL } from '../cardDetails/cardDetailsSlice';
 import { useAppSelector } from '../../shared/hooks';
 import { useDispatch } from 'react-redux';
-import { Person } from '../../pages/main/api/types';
+import { Person } from '../../shared/api/types';
 import { setSelectedArr } from '../flyoutElement/selectedSlice';
 
 type Props = {
@@ -32,13 +31,16 @@ const Card = ({ el }: Props) => {
   };
 
   return (
-    <div className={styles.person} onClick={() => handleClick(el.url)}>
-      <h2 className={styles.name}>{el.name}</h2>
-      <p className={styles.description}>
+    <div
+      className="w-[250px] p-2.5 border border-solid rounded-lg cursor-pointer relative"
+      onClick={() => handleClick(el.url)}
+    >
+      <h2 className="text-center font-bold">{el.name}</h2>
+      <p className="text-justify">
         Was born in the year {el.birth_year}.{' '}
         {el.gender.charAt(0).toUpperCase() + el.gender.slice(1)} has {el.eye_color} eyes...
       </p>
-      <label className={styles.label} aria-label="select person">
+      <label className="absolute top-0 left-0 m-1.5" aria-label="select person">
         <input type="checkbox" onChange={handleChange} checked={!!isSelectedPerson} />
       </label>
     </div>

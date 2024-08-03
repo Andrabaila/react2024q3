@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useGetPeopleQuery } from '../../shared/api/swapiApi';
 import CardList from './CardList';
 import { Person } from '../../shared/api/types';
-import { useSearchParams } from 'next/navigation';
 
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
@@ -15,7 +14,12 @@ jest.mock('../../shared/api/swapiApi', () => ({
 }));
 
 jest.mock('next/navigation', () => ({
-  useSearchParams: jest.fn(),
+  useRouter() {
+    return {
+      prefetch: () => null,
+      replace: () => null,
+    };
+  },
 }));
 
 jest.mock('../card', () => {
@@ -31,7 +35,6 @@ const mockPeopleData = {
 
 describe('CardList', () => {
   const mockDispatch = jest.fn();
-  const setURLSearchParams = jest.fn();
 
   beforeEach(() => {
     (useSelector as unknown as jest.Mock).mockImplementation((selector) =>
@@ -42,7 +45,6 @@ describe('CardList', () => {
     );
 
     (useDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
-    (useSearchParams as jest.Mock).mockReturnValue([{}, setURLSearchParams]);
   });
 
   afterEach(() => {
@@ -61,8 +63,6 @@ describe('CardList', () => {
     (useGetPeopleQuery as jest.Mock).mockReturnValue({ data: mockPeopleData, isLoading: false });
 
     render(<CardList />);
-
-    screen.debug();
 
     expect(screen.getByText('Luke Skywalker')).toBeInTheDocument();
     expect(screen.queryByText('Sorry!')).not.toBeInTheDocument();

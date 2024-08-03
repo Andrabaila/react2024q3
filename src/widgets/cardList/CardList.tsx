@@ -6,16 +6,21 @@ import Pagination from '../pagination';
 import { useDispatch } from 'react-redux';
 import { setTotalPages } from '../pagination/paginationSlice';
 import Card from '../card';
+import { useRouter } from 'next/navigation';
 
 export default function CardList() {
+  const router = useRouter();
   const searchQuery = useAppSelector((state) => state.search.searchQueryValue);
   const currentPageNumber = useAppSelector((state) => state.pagination.currentPageNumber);
   const dispatch = useDispatch();
 
-  /*   const [, setURLSearchParams] = useSearchParams();
   useEffect(() => {
-    setURLSearchParams(`search=${searchQuery}&page=${currentPageNumber}`);
-  }, [setURLSearchParams, searchQuery, currentPageNumber]); */
+    const params = new URLSearchParams({
+      search: searchQuery,
+      page: String(currentPageNumber),
+    });
+    router.replace(`?${params.toString()}`);
+  }, [router, searchQuery, currentPageNumber]);
 
   const { data: peopleData, isLoading } = useGetPeopleQuery({
     searchQuery: searchQuery.trim(),

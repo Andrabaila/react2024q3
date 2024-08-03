@@ -18,7 +18,7 @@ const FlyoutElement = () => {
         Unselect all
       </button>
       <CSVLink data={selectedPeople} filename={`${selectedPeople.length}_people.csv`}>
-        <button>Download</button>
+        <button type="button">Download</button>
       </CSVLink>
     </section>
   );

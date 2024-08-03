@@ -4,7 +4,6 @@ import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
 import SearchInput from './SearchInput';
 import { People } from '../../../shared/api/types';
 
-// Mock the useAppDispatch and useAppSelector hooks
 jest.mock('../../hooks/', () => ({
   useAppDispatch: () => jest.fn(),
   useAppSelector: jest.fn(),
@@ -17,7 +16,7 @@ interface RootState {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
 }
 
-const mockStore = configureStore<RootState>([]); // Specify the type for the store
+const mockStore = configureStore<RootState>([]);
 const initialState: RootState = {
   searchInputValue: localStorage.getItem('searchInputValue') || '',
   searchQueryValue: localStorage.getItem('searchQueryValue') || '',
@@ -31,7 +30,7 @@ const initialState: RootState = {
 };
 
 describe('SearchInput', () => {
-  let store: MockStoreEnhanced<RootState, object>; // Specify the type for the store
+  let store: MockStoreEnhanced<RootState, object>;
 
   beforeEach(() => {
     store = mockStore(initialState);

@@ -5,7 +5,6 @@ import CardList from './CardList';
 import { Person } from '../../shared/api/types';
 import { useSearchParams } from 'next/navigation';
 
-// Mock hooks
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
   useDispatch: jest.fn(),
@@ -19,14 +18,12 @@ jest.mock('next/navigation', () => ({
   useSearchParams: jest.fn(),
 }));
 
-// Mock Card component with displayName
 jest.mock('../card', () => {
   const Card = ({ el }: { el: Person }) => <div>{el.name}</div>;
   Card.displayName = 'Card';
   return Card;
 });
 
-// Test data
 const mockPeopleData = {
   count: 1,
   results: [{ name: 'Luke Skywalker' }] as Person[],
@@ -65,7 +62,7 @@ describe('CardList', () => {
 
     render(<CardList />);
 
-    screen.debug(); // Add this line to inspect the rendered output
+    screen.debug();
 
     expect(screen.getByText('Luke Skywalker')).toBeInTheDocument();
     expect(screen.queryByText('Sorry!')).not.toBeInTheDocument();

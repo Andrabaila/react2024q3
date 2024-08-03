@@ -4,7 +4,6 @@ import SearchButton from './SearchButton';
 import { setQueryValue } from '../searchInput/searchSlice';
 import { setCurrentPageNumber } from '../../../widgets/pagination/paginationSlice';
 
-// Мокируем хук useAppDispatch и useAppSelector
 jest.mock('../../hooks', () => ({
   useAppDispatch: jest.fn(),
   useAppSelector: jest.fn(),
@@ -47,14 +46,11 @@ describe('SearchButton', () => {
   it('renders Search button and handles click', () => {
     render(<SearchButton />);
 
-    // Проверяем, что кнопка рендерится
     const button = screen.getByText('Search');
     expect(button).toBeInTheDocument();
 
-    // Нажимаем на кнопку
     fireEvent.click(button);
 
-    // Проверяем, что dispatch был вызван с правильными аргументами
     expect(dispatchMock).toHaveBeenCalledWith(setQueryValue('new value'));
     expect(dispatchMock).toHaveBeenCalledWith(setCurrentPageNumber(1));
   });

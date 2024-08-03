@@ -45,8 +45,8 @@ describe('ThemeProvider', () => {
       </ThemeProvider>,
     );
 
-    fireEvent.click(screen.getByText('Toggle Theme')); // to dark
-    fireEvent.click(screen.getByText('Toggle Theme')); // back to light
+    fireEvent.click(screen.getByText('Toggle Theme'));
+    fireEvent.click(screen.getByText('Toggle Theme'));
 
     expect(screen.getByTestId('theme').textContent).toBe('light');
     expect(document.body.className).toBe('light');

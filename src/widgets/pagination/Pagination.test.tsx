@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from '../../shared/hooks';
 import Pagination from './Pagination';
 import { setCurrentPageNumber } from './paginationSlice';
 
-// Mock the hooks
 jest.mock('../../shared/hooks', () => ({
   useAppDispatch: jest.fn(),
   useAppSelector: jest.fn(),

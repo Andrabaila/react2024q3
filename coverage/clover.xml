@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1722714072379" clover="3.2.0">
-  <project timestamp="1722714072379" name="All files">
-    <metrics statements="172" coveredstatements="146" conditionals="29" coveredconditionals="26" methods="55" coveredmethods="42" elements="256" coveredelements="214" complexity="0" loc="172" ncloc="172" packages="16" files="20" classes="20"/>
+<coverage generated="1722715025325" clover="3.2.0">
+  <project timestamp="1722715025325" name="All files">
+    <metrics statements="172" coveredstatements="155" conditionals="29" coveredconditionals="27" methods="55" coveredmethods="45" elements="256" coveredelements="227" complexity="0" loc="172" ncloc="172" packages="16" files="20" classes="20"/>
     <package name="features.errorBoundary">
-      <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="ErrorBoundary.tsx" path="/home/ya/Downloads/react2024q3/src/features/errorBoundary/ErrorBoundary.tsx">
-        <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="23" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
+        <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="23" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
       </file>
     </package>
     <package name="features.theme">

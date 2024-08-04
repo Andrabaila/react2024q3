@@ -22,7 +22,7 @@ const config: Config = {
     ],
     '^.+\\.css$': 'jest-css-modules-transform',
   },
-  setupFilesAfterEnv: ['./src/setupTests.ts'],
+  setupFilesAfterEnv: ['./src/tests/setupTests.ts'],
 };
 
 export default config;

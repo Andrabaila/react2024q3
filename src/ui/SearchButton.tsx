@@ -1,6 +1,6 @@
-import { setCurrentPageNumber } from '../../../widgets/pagination/paginationSlice';
+import { setCurrentPageNumber } from '@/store/paginationSlice';
 import { useAppDispatch, useAppSelector } from '../hooks';
-import { setQueryValue } from '../searchInput/searchSlice';
+import { setQueryValue } from '@/store/searchSlice';
 
 const SearchButton = () => {
   const searchInputValue = useAppSelector((state) => state.search.searchInputValue);

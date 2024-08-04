@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { SearchButton } from '../ui';
-import { setQueryValue } from '../ui/searchSlice';
+import { setQueryValue } from '../store/searchSlice';
 import { setCurrentPageNumber } from '../store/paginationSlice';
 
 jest.mock('../../hooks', () => ({

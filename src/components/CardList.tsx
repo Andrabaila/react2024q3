@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { Person } from '../../api/types';
-import { useGetPeopleQuery } from '../../api/swapiApi';
-import { useAppSelector } from '../../hooks';
-import Pagination from '../pagination';
 import { useDispatch } from 'react-redux';
-import { setTotalPages } from '../pagination/paginationSlice';
-import Card from '../card';
 import { useRouter } from 'next/navigation';
+
+import { Person } from '@/api/types';
+import { useGetPeopleQuery } from '@/api/swapiApi';
+import { setTotalPages } from '@/store/paginationSlice';
+import { useAppSelector } from '@/hooks';
+import { Pagination, Card } from '@/components';
 
 export default function CardList() {
   const router = useRouter();

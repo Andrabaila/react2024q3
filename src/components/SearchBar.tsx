@@ -1,4 +1,4 @@
-import { SearchButton, SearchInput } from '../../ui';
+import { SearchButton, SearchInput } from '@/ui';
 
 const SearchBar = () => {
   return (

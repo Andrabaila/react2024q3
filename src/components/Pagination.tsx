@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { setCurrentPageNumber } from '../../store/paginationSlice';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { setCurrentPageNumber } from '@/store/paginationSlice';
 
 const Pagination = () => {
   const dispatch = useAppDispatch();

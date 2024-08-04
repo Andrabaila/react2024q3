@@ -1,5 +1,5 @@
 import React from 'react';
-import { FallbackUI } from '../../components';
+import { FallbackUI } from '@/components';
 
 type ErrorBoundaryState = {
   hasError: boolean;

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext, ThemeContextProps } from '../../features/theme/ThemeContext';
+import { ThemeContext, ThemeContextProps } from '@/features/ThemeContext';
 
 const useTheme = (): ThemeContextProps => {
   const context = useContext(ThemeContext);

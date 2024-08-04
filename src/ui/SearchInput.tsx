@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../hooks';
-import { setSearchValue } from './searchSlice';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { setSearchValue } from '@/store/searchSlice';
 
 const SearchInput = () => {
   const dispatch = useAppDispatch();

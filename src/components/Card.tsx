@@ -1,8 +1,8 @@
-import { setIsVisible, setPersonURL } from '../cardDetails/cardDetailsSlice';
-import { useAppSelector } from '../../hooks';
+import { setIsVisible, setPersonURL } from '@/store/cardDetailsSlice';
+import { useAppSelector } from '@/hooks';
 import { useDispatch } from 'react-redux';
-import { Person } from '../../api/types';
-import { setSelectedArr } from '../flyoutElement/selectedSlice';
+import { Person } from '@/api/types';
+import { setSelectedArr } from '@/store/selectedSlice';
 
 type Props = {
   el: Person;
@@ -13,11 +13,11 @@ const Card = ({ el }: Props) => {
   const selectedPeople = useAppSelector((state) => state.selected.selectedArr);
 
   const dispatch = useDispatch();
-  const isSelectedPerson = selectedPeople.find((person) => person.name === el.name);
+  const isSelectedPerson = selectedPeople.find((person: Person) => person.name === el.name);
 
   const handleChange = () => {
     if (isSelectedPerson) {
-      dispatch(setSelectedArr(selectedPeople.filter((person) => person.name != el.name)));
+      dispatch(setSelectedArr(selectedPeople.filter((person: Person) => person.name != el.name)));
     } else {
       dispatch(setSelectedArr([...selectedPeople, el]));
     }

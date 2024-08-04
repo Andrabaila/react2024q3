@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../../hooks';
-import { setSelectedArr } from './selectedSlice';
+import { useAppSelector } from '@/hooks';
+import { setSelectedArr } from '@/store/selectedSlice';
 import { CSVLink } from 'react-csv';
 
 const FlyoutElement = () => {

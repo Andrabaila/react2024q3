@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Person } from '../../api/types';
+import { Person } from '@/api/types';
 
 export interface SelectedState {
   quantity: number;

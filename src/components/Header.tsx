@@ -1,5 +1,5 @@
-import { ErrorButton, ThemeButton } from '../../ui';
-import SearchBar from '../searchBar';
+import { ErrorButton, ThemeButton } from '@/ui';
+import { SearchBar } from '@/components';
 
 const Header = () => {
   return (

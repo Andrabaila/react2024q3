@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { People } from '../../../shared/api/types';
+import { People } from '@/api/types';
 
 export interface SearchState {
   searchInputValue: string;

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../../hooks';
-import { setIsVisible } from './cardDetailsSlice';
-import { useGetPersonQuery } from '../../api/swapiApi';
+import { useAppSelector } from '@/hooks';
+import { setIsVisible } from '@/store/cardDetailsSlice';
+import { useGetPersonQuery } from '@/api/swapiApi';
 
 const CardDetails = () => {
   const isDetailsVisible = useAppSelector((state) => state.details.isVisible);

@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { swapiApi } from './api/swapiApi';
-import searchReducer from './ui/searchSlice';
-import paginationReducer from './components/pagination/paginationSlice';
-import detailsReducer from './components/cardDetails/cardDetailsSlice';
-import selectedReducer from './components/flyoutElement/selectedSlice';
+import { swapiApi } from '@/api/swapiApi';
+import searchReducer from '@/store/searchSlice';
+import paginationReducer from '@/store/paginationSlice';
+import detailsReducer from '@/store/cardDetailsSlice';
+import selectedReducer from '@/store/selectedSlice';
 
 export const store = configureStore({
   reducer: {

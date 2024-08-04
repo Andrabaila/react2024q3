@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { ErrorBoundary } from '@/features';
-import { ThemeProvider } from '@/features/theme';
+import { ThemeProvider } from '@/features/ThemeContext';
 import { store } from '@/store/store';
 import '@/styles/globals.css';
 import { Provider } from 'react-redux';
@@ -11,7 +11,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/styles/global.css" />
       </head>
       <body>
         <Provider store={store}>

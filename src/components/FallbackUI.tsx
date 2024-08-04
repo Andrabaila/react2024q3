@@ -1,8 +1,8 @@
-const handleClick = () => {
-  window.location.href = '/';
-};
-
 const FallbackUI = () => {
+  const handleClick = () => {
+    window.location.href = '/';
+  };
+
   return (
     <main className="text-red-500">
       <h1 className="flex flex-col items-center">ERROR!!!</h1>

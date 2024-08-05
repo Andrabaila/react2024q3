@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1722722208688" clover="3.2.0">
+  <project timestamp="1722722208688" name="All files">
+    <metrics statements="177" coveredstatements="149" conditionals="29" coveredconditionals="25" methods="56" coveredmethods="37" elements="262" coveredelements="211" complexity="0" loc="177" ncloc="177" packages="16" files="20" classes="20"/>
+    <package name="features.errorBoundary">
+      <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="ErrorBoundary.tsx" path="/home/ya/Downloads/react2024q3/src/features/errorBoundary/ErrorBoundary.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="23" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.theme">
+      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="ThemeContext.tsx" path="/home/ya/Downloads/react2024q3/src/features/theme/ThemeContext.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages">
+      <metrics statements="22" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <file name="404.tsx" path="/home/ya/Downloads/react2024q3/src/pages/404.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+      <file name="_app.tsx" path="/home/ya/Downloads/react2024q3/src/pages/_app.tsx">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="_document.tsx" path="/home/ya/Downloads/react2024q3/src/pages/_document.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="error.tsx" path="/home/ya/Downloads/react2024q3/src/pages/error.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/home/ya/Downloads/react2024q3/src/pages/index.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.ui.errorButton">
+      <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="ErrorButton.tsx" path="/home/ya/Downloads/react2024q3/src/shared/ui/errorButton/ErrorButton.tsx">
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.ui.searchButton">
+      <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="2"/>
+      <file name="SearchButton.tsx" path="/home/ya/Downloads/react2024q3/src/shared/ui/searchButton/SearchButton.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.ui.searchInput">
+      <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="SearchInput.tsx" path="/home/ya/Downloads/react2024q3/src/shared/ui/searchInput/SearchInput.tsx">
+        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.ui.themeButton">
+      <metrics statements="5" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="ThemeButton.tsx" path="/home/ya/Downloads/react2024q3/src/shared/ui/themeButton/ThemeButton.tsx">
+        <metrics statements="5" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.card">
+      <metrics statements="20" coveredstatements="19" conditionals="3" coveredconditionals="2" methods="8" coveredmethods="6"/>
+      <file name="Card.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/card/Card.tsx">
+        <metrics statements="20" coveredstatements="19" conditionals="3" coveredconditionals="2" methods="8" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.cardDetails">
+      <metrics statements="16" coveredstatements="15" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <file name="CardDetails.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/cardDetails/CardDetails.tsx">
+        <metrics statements="16" coveredstatements="15" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="21" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.cardList">
+      <metrics statements="22" coveredstatements="22" conditionals="11" coveredconditionals="11" methods="6" coveredmethods="6"/>
+      <file name="CardList.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/cardList/CardList.tsx">
+        <metrics statements="22" coveredstatements="22" conditionals="11" coveredconditionals="11" methods="6" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.errorComponent">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="ErrorComponent.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/errorComponent/ErrorComponent.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.fallbackUI">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="FallbackUI.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/fallbackUI/FallbackUI.tsx">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.flyoutElement">
+      <metrics statements="11" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="FlyoutElement.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/flyoutElement/FlyoutElement.tsx">
+        <metrics statements="11" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.header">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Header.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/header/Header.tsx">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.pagination">
+      <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+      <file name="Pagination.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/pagination/Pagination.tsx">
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="widgets.searchBar">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="SearchBar.tsx" path="/home/ya/Downloads/react2024q3/src/widgets/searchBar/SearchBar.tsx">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
